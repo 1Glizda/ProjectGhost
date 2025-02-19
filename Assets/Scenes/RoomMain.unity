@@ -4025,7 +4025,6 @@ GameObject:
   - component: {fileID: 384865200}
   - component: {fileID: 384865199}
   - component: {fileID: 384865198}
-  - component: {fileID: 384865197}
   - component: {fileID: 384865196}
   m_Layer: 3
   m_Name: Human
@@ -4060,26 +4059,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 4.5946784, y: 10.118202}
   m_EdgeRadius: 0
---- !u!95 &384865197
-Animator:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 384865195}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1525c916d2bc14b0dbc147008a5e5182, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!50 &384865198
 Rigidbody2D:
   serializedVersion: 4
@@ -4115,7 +4094,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   animator: {fileID: 0}
-  defaultController: {fileID: 0}
+  defaultController: {fileID: 9100000, guid: de2c77c80db334b569cfb7bedc9f2067, type: 2}
 --- !u!212 &384865200
 SpriteRenderer:
   m_ObjectHideFlags: 0
