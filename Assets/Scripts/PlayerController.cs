@@ -44,16 +44,16 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxis("Horizontal");
 
-         if(roomState == 1) {
-            if (horizontal >= 0f)
-            {
-                transform.localScale = new Vector2(0.8f, 0.8f);
-            }
-            else if (horizontal < 0f)
-            {
-                transform.localScale = new Vector2(-0.8f, 0.8f);
-            }
-        }
+        //  if(roomState == 1) {
+        //     if (horizontal >= 0f)
+        //     {
+        //         transform.localScale = new Vector2(0.12f, 0.12f);
+        //     }
+        //     else if (horizontal < 0f)
+        //     {
+        //         transform.localScale = new Vector2(-0.12f, 0.12f);
+        //     }
+        // }
 
         if (playerRigidbody.velocity.magnitude > 0.1f)
         {

@@ -19,7 +19,9 @@
 *.userprefs
 *.booproj
 *.svd
-*.orig
+*.orig*
+*.pub
+y
 
 # macOS system files
 .DS_Store
