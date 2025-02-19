@@ -1,0 +1,28 @@
+# Unity generated files
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Visual Studio / Rider files
+.vs/
+*.csproj
+*.sln
+*.unityproj
+*.user
+*.pidb
+*.suo
+*.tmp
+*.userprefs
+*.booproj
+*.svd
+*.orig
+
+# macOS system files
+.DS_Store
+
+# Crash logs
+mono_crash.*
