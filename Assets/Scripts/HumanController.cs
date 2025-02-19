@@ -7,9 +7,9 @@ using TMPro;
 using Unity.VisualScripting;
 
 
-public class PlayerController : MonoBehaviour
+public class HumanController : MonoBehaviour
 {
-    public static PlayerController instance;
+    public static HumanController instance;
     public float speed;
     Rigidbody2D playerRigidbody;
     BoxCollider2D playerCollider;
@@ -34,10 +34,17 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate()
     {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        float horizontal = 0;
+        float vertical = 0;
+        float smoothFactor = 10f;
 
-        playerRigidbody.velocity = new Vector2(horizontal * speed, vertical * speed);
+        if (Input.GetKey(KeyCode.A)) horizontal = -1;
+        if (Input.GetKey(KeyCode.D)) horizontal = 1;
+        if (Input.GetKey(KeyCode.S)) vertical = -1;
+        if (Input.GetKey(KeyCode.W)) vertical = 1;
+
+        Vector2 targetVelocity = new Vector2(horizontal * speed, vertical * speed);
+        playerRigidbody.velocity = Vector2.Lerp(playerRigidbody.velocity, targetVelocity, Time.deltaTime * smoothFactor);    
     }
 
     void Update()

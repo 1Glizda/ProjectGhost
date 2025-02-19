@@ -4,19 +4,27 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public static CameraController instance;
-    public Room currRoom;
-    public float moveSpeedWhenRoomChange;
+    public Transform player;
+    public Vector3 offset;
 
-    void Awake() {
-        instance = this;
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        // UpdatePosition();
+        //get the players position and add it with offset, then store it to transform.position aka the cameras position
+        transform.position = player.position + offset;
     }
+    // public static CameraController instance;
+    // public Room currRoom;
+    // public float moveSpeedWhenRoomChange;
+
+    // void Awake() {
+    //     instance = this;
+    // }
+
+    // // Update is called once per frame
+    // void Update()
+    // {
+        // UpdatePosition();
+    // }
 
     // void UpdatePosition() {
     //     if(instance == null) {
@@ -40,26 +48,26 @@ public class CameraController : MonoBehaviour
     //     return targetPos;
     // }
 
-    bool IsPlayerInCurrRoom()
-    {
-        if (currRoom == null)
-        {
-            return false;
-        }
+    // bool IsPlayerInCurrRoom()
+    // {
+    //     if (currRoom == null)
+    //     {
+    //         return false;
+    //     }
 
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+    //     GameObject player = GameObject.FindGameObjectWithTag("Player");
 
-        if (player != null)
-        {
-            Collider2D roomCollider = currRoom.GetComponentInChildren<Collider2D>();
-            if (roomCollider != null)
-            {
-                return roomCollider.bounds.Contains(player.transform.position);
-            }
-        }
+    //     if (player != null)
+    //     {
+    //         Collider2D roomCollider = currRoom.GetComponentInChildren<Collider2D>();
+    //         if (roomCollider != null)
+    //         {
+    //             return roomCollider.bounds.Contains(player.transform.position);
+    //         }
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
     // public bool IsSwitchingScene() {
     //     return transform.position.Equals(GetCameraTargetPosition()) == false;

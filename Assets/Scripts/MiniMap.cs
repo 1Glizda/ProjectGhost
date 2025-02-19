@@ -47,7 +47,7 @@ public class MiniMap : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) //to modify to human and ghost
         {
             StartCoroutine(FadeTransparency(0.4f));
         }
@@ -55,7 +55,7 @@ public class MiniMap : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player")) //to modify to human and ghost
         {
             StartCoroutine(FadeTransparency(1f));
         }

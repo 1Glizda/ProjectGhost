@@ -7,12 +7,13 @@ public class Door : MonoBehaviour
     
     [SerializeField] private Collider2D doorCollider;
     [SerializeField] private SpriteRenderer doorSpriteRenderer;
-    private float widthOffset = 0.01f;
-    private GameObject player;
+    private float widthOffset = 2f;
+    private GameObject human, ghost;
 
     private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
+        human = GameObject.FindGameObjectWithTag("Human");
+        ghost = GameObject.FindGameObjectWithTag("Ghost");
         CacheDoorComponents();
     }
 
@@ -36,7 +37,7 @@ public class Door : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Human") || other.CompareTag("Ghost"))
         {
             Vector2 newPosition = doorType switch
             {
@@ -47,7 +48,8 @@ public class Door : MonoBehaviour
                 _ => other.transform.position
             };
             
-            player.transform.position = newPosition;
+            ghost.transform.position = newPosition;
+            human.transform.position = newPosition;
         }
     }
 }
