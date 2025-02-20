@@ -48,7 +48,6 @@ public class TriggerDialogue_room3 : MonoBehaviour
                 bool nextDialogue = false;
                 float timer = 0f;
 
-                // Wait for 2 seconds or until Enter is pressed
                 while (timer < 8f && !nextDialogue)
                 {
                     if (Input.GetKeyDown(KeyCode.Return)) // Skip to the next dialogue
