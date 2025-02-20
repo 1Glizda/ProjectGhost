@@ -7,8 +7,11 @@ public class Door : MonoBehaviour
     
     [SerializeField] private Collider2D doorCollider;
     [SerializeField] private SpriteRenderer doorSpriteRenderer;
+    [SerializeField] private Collider2D OppsiteDoorCollider;
+    [SerializeField] private SpriteRenderer OppositeDoorSpriteRenderer;
     private float widthOffset = 2f;
     private GameObject human, ghost;
+    public Sprite newDoor, oldDoor, newDoorOpposite, oldDoorOpposite;
 
     private void Start()
     {
@@ -24,6 +27,11 @@ public class Door : MonoBehaviour
         
         if (doorSpriteRenderer == null)
             doorSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        if (OppsiteDoorCollider == null)
+            OppsiteDoorCollider = GetComponentInChildren<Collider2D>();
+        
+        if (OppositeDoorSpriteRenderer == null)
+            OppositeDoorSpriteRenderer = GetComponentInChildren<SpriteRenderer>();
     }
 
     public void PassDoor()
@@ -31,7 +39,9 @@ public class Door : MonoBehaviour
         if (doorCollider != null && doorSpriteRenderer != null)
         {
             doorCollider.isTrigger = true;
-            doorSpriteRenderer.color = Color.green;
+            doorSpriteRenderer.sprite = newDoor;
+            OppsiteDoorCollider.isTrigger = true;
+            OppositeDoorSpriteRenderer.sprite = newDoorOpposite;
         }
     }
 

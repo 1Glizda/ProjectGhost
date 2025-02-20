@@ -3,6 +3,7 @@ using UnityEngine;
 public class CypherTrigger : MonoBehaviour
 {
     public GameObject cypherUI; // Assign in the Inspector
+    public GameObject inputHandler;
 
     void Start()
     {
@@ -16,6 +17,7 @@ public class CypherTrigger : MonoBehaviour
         if (cypherUI != null)
         {
             cypherUI.SetActive(false);
+            inputHandler.SetActive(false);
         }
     }
 
@@ -40,6 +42,7 @@ public class CypherTrigger : MonoBehaviour
         if (cypherUI != null)
         {
             cypherUI.SetActive(true);
+            inputHandler.SetActive(true);
             Debug.Log("Cypher activated!");
         }
         else

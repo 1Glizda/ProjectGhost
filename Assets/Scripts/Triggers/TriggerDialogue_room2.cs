@@ -35,14 +35,6 @@ public class TriggerDialogue_room2 : MonoBehaviour
     {
         isInteracting = true; // Prevent multiple triggers
 
-        // Disable player movement
-        if (humanMovementScript != null) humanMovementScript.enabled = false;
-        if (ghostMovementScript != null) ghostMovementScript.enabled = false;
-
-        // Stop movement by setting velocity to zero (if using Rigidbody2D)
-        if (humanRb != null) humanRb.velocity += new Vector2(-2, 1f);
-        if (ghostRb != null) ghostRb.velocity = humanRb.velocity;
-
         for (int i = 0; i < dialogues.Length; i++)
         {
             if (dialogues[i] != null)
@@ -70,10 +62,6 @@ public class TriggerDialogue_room2 : MonoBehaviour
                 }
             }
         }
-
-        // Re-enable player movement after dialogues finish
-        if (humanMovementScript != null) humanMovementScript.enabled = true;
-        if (ghostMovementScript != null) ghostMovementScript.enabled = true;
 
         isInteracting = false; // Enable interactions again
     }

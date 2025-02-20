@@ -8,6 +8,7 @@ public class CandleTrigger : MonoBehaviour
     // The speed at which the object moves
     public float moveSpeed = 5f;
     public GameObject cypherUi;
+    public GameObject inputHolder;
 
     // Flag to check if the object should move
     private bool shouldMove = false;
@@ -35,6 +36,7 @@ public class CandleTrigger : MonoBehaviour
         {
             shouldMove = true;
             cypherUi.SetActive(true);
+            inputHolder.SetActive(false);
         }
     }
 
@@ -45,6 +47,7 @@ public class CandleTrigger : MonoBehaviour
         {
             shouldMove = true;
             cypherUi.SetActive(true);
+            inputHolder.SetActive(false);
         }
     }
 

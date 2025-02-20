@@ -7,8 +7,8 @@ public class HumanController : MonoBehaviour
     private Rigidbody2D playerRigidbody;
     private BoxCollider2D playerCollider;
     private SpriteRenderer spriteRenderer;
-    public Animator animator;
-    public RuntimeAnimatorController defaultController;
+    // public Animator animator;
+    // public RuntimeAnimatorController defaultController;
     public static int collectedAmount = 0;
     public static int roomState = 1;
     private GameObject minimapCanvas;
@@ -21,7 +21,7 @@ public class HumanController : MonoBehaviour
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerCollider = GetComponent<BoxCollider2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        animator.runtimeAnimatorController = defaultController;
+        // animator.runtimeAnimatorController = defaultController;
         minimapCanvas = GameObject.Find("MiniMap Canvas");
     }
 
@@ -60,11 +60,11 @@ public class HumanController : MonoBehaviour
             }
         }
 
-        // Pass values to Animator
-        animator.SetFloat("MoveX", lastDirection.x);
-        animator.SetFloat("MoveY", lastDirection.y);
+        // // Pass values to Animator
+        // animator.SetFloat("MoveX", lastDirection.x);
+        // animator.SetFloat("MoveY", lastDirection.y);
 
-        // Use Animator parameter instead of forcing animation
-        animator.SetBool("isMoving", playerRigidbody.velocity.magnitude > 0.1f);
+        // // Use Animator parameter instead of forcing animation
+        // animator.SetBool("isMoving", playerRigidbody.velocity.magnitude > 0.1f);
     }
 }

@@ -40,10 +40,6 @@ public class TriggerDialogue_room3 : MonoBehaviour
     {
         isInteracting = true; // Prevent multiple triggers
 
-        // Disable player movement
-        if (humanMovementScript != null) humanMovementScript.enabled = false;
-        if (ghostMovementScript != null) ghostMovementScript.enabled = false;
-
         for (int i = 0; i < dialogues.Length; i++)
         {
             if (dialogues[i] != null)
@@ -63,24 +59,8 @@ public class TriggerDialogue_room3 : MonoBehaviour
                 }
 
                 dialogues[i].SetActive(false);
-
-                // Activate Ghost after the 3rd dialogue (index 2)
-                if (i == 2 && ghost != null)
-                {
-                    ghost.SetActive(true);
-                }
-
-                // Open the door after the last dialogue (index 5)
-                if (i == 5 && door1 != null)
-                {
-                    door1.PassDoor();
-                }
             }
         }
-
-        // Re-enable player movement after dialogues finish
-        if (humanMovementScript != null) humanMovementScript.enabled = true;
-        if (ghostMovementScript != null) ghostMovementScript.enabled = true;
 
         isInteracting = false; // Enable interactions again
     }
