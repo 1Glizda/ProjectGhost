@@ -124,7 +124,7 @@ TextureImporter:
         width: 373
         height: 2835
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -132,6 +132,27 @@ TextureImporter:
       bones: []
       spriteID: a960c4f4016464b13839e1559eaa16d4
       internalID: -2120230420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: perete dreapta_1
+      rect:
+        serializedVersion: 2
+        x: 2903
+        y: 0
+        width: 373
+        height: 1479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 401085cf4ebb84c04b3dfe17c275910d
+      internalID: 691874808
       vertices: []
       indices: 
       edges: []
@@ -147,6 +168,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
+      perete dreapta_1: 691874808
       perete dreapta_0: -2120230420
   spritePackingTag: 
   pSDRemoveMatte: 0
