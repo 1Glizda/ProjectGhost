@@ -7,12 +7,14 @@ public class CandleTrigger : MonoBehaviour
 
     // The speed at which the object moves
     public float moveSpeed = 5f;
+    public GameObject cypherUi;
 
     // Flag to check if the object should move
     private bool shouldMove = false;
 
     // The original position of the object
     private Vector3 originalPosition;
+    
 
     // The target position calculated from the original position and the moveOffset
     private Vector3 targetPosition;
@@ -32,6 +34,7 @@ public class CandleTrigger : MonoBehaviour
         if (other.CompareTag("Ghost") && Input.GetKey(KeyCode.RightShift))
         {
             shouldMove = true;
+            cypherUi.SetActive(true);
         }
     }
 
@@ -41,6 +44,7 @@ public class CandleTrigger : MonoBehaviour
         if (other.CompareTag("Ghost") && Input.GetKey(KeyCode.RightShift))
         {
             shouldMove = true;
+            cypherUi.SetActive(true);
         }
     }
 

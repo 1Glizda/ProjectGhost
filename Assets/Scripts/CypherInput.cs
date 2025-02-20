@@ -4,7 +4,7 @@ using TMPro;
 public class CypherInput : MonoBehaviour
 {
     public TMP_InputField inputField; // Assign in Inspector
-    public int correctCode = 1234; // Set the correct number
+    public int correctCode = 351; // Set the correct number
     public Door door5;
 
     void Update()
