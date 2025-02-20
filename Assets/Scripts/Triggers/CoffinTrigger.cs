@@ -25,12 +25,10 @@ public class CoffinTrigger : MonoBehaviour
     {
         if (other.CompareTag("Ghost"))
         {
-            if(Input.GetKeyDown(KeyCode.RightShift)) {
                 if(count == 0) {
                     StartCoroutine(DisplayDialogues());
                     count++;
                 }
-            }
         }
     }
 
@@ -81,7 +79,7 @@ public class CoffinTrigger : MonoBehaviour
                 float timer = 0f;
 
                 // Wait for 2 seconds or until Enter is pressed
-                while (timer < 2f && !nextDialogue)
+                while (timer < 8f && !nextDialogue)
                 {
                     if (Input.GetKeyDown(KeyCode.Return)) // Skip to the next dialogue
                         nextDialogue = true;
