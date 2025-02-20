@@ -7,16 +7,10 @@ jobs:
     name: Build WebGL
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: true
-
-      - uses: actions/cache@v3
-        with:
-          path: Library
-          key: Library-WebGL
-          restore-keys: Library-
 
       - name: Setup Unity
         uses: game-ci/unity-builder@v2
@@ -26,6 +20,18 @@ jobs:
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
           targetPlatform: WebGL
+
+      - name: List workspace directory
+        run: ls -R
+
+      - name: List build directory (if it exists)
+        run: ls -R build
+
+      - uses: actions/cache@v3
+        with:
+          path: Library
+          key: Library-WebGL
+          restore-keys: Library-
 
       - uses: actions/upload-artifact@v4
         with:
@@ -38,7 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Download WebGL build artifact
         uses: actions/download-artifact@v4
